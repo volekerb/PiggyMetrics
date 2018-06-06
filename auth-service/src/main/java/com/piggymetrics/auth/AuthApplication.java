@@ -1,6 +1,6 @@
 package com.piggymetrics.auth;
 
-import com.piggymetrics.auth.service.security.MongoUserDetailsService;
+import com.piggymetrics.auth.service.security.JDBCUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
@@ -40,7 +40,7 @@ public class AuthApplication {
 	protected static class webSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		@Autowired
-		private MongoUserDetailsService userDetailsService;
+		private JDBCUserDetailsService userDetailsService;
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
@@ -76,7 +76,7 @@ public class AuthApplication {
 		private AuthenticationManager authenticationManager;
 
 		@Autowired
-		private MongoUserDetailsService userDetailsService;
+		private JDBCUserDetailsService userDetailsService;
 
 		@Autowired
 		private Environment env;
