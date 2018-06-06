@@ -1,62 +1,95 @@
 package com.piggymetrics.account.domain;
 
-import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Saving {
+  @Id
+  @JsonIgnore
+  private String name;
 
-	@NotNull
-	private BigDecimal amount;
+  @OneToOne(fetch = FetchType.LAZY)
+  @MapsId
+  @JsonIgnore
+  private Account account;
 
-	@NotNull
-	private Currency currency;
+  @NotNull
+  private BigDecimal amount;
 
-	@NotNull
-	private BigDecimal interest;
+  @NotNull
+  private Currency currency;
 
-	@NotNull
-	private Boolean deposit;
+  @NotNull
+  private BigDecimal interest;
 
-	@NotNull
-	private Boolean capitalization;
+  @NotNull
+  private Boolean deposit;
 
-	public BigDecimal getAmount() {
-		return amount;
-	}
+  @NotNull
+  private Boolean capitalization;
 
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public Currency getCurrency() {
-		return currency;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public void setCurrency(Currency currency) {
-		this.currency = currency;
-	}
+  public Account getAccount() {
+    return account;
+  }
 
-	public BigDecimal getInterest() {
-		return interest;
-	}
+  public void setAccount(Account account) {
+    this.account = account;
+  }
 
-	public void setInterest(BigDecimal interest) {
-		this.interest = interest;
-	}
+  public BigDecimal getAmount() {
+    return amount;
+  }
 
-	public Boolean getDeposit() {
-		return deposit;
-	}
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
+  }
 
-	public void setDeposit(Boolean deposit) {
-		this.deposit = deposit;
-	}
+  public Currency getCurrency() {
+    return currency;
+  }
 
-	public Boolean getCapitalization() {
-		return capitalization;
-	}
+  public void setCurrency(Currency currency) {
+    this.currency = currency;
+  }
 
-	public void setCapitalization(Boolean capitalization) {
-		this.capitalization = capitalization;
-	}
+  public BigDecimal getInterest() {
+    return interest;
+  }
+
+  public void setInterest(BigDecimal interest) {
+    this.interest = interest;
+  }
+
+  public Boolean getDeposit() {
+    return deposit;
+  }
+
+  public void setDeposit(Boolean deposit) {
+    this.deposit = deposit;
+  }
+
+  public Boolean getCapitalization() {
+    return capitalization;
+  }
+
+  public void setCapitalization(Boolean capitalization) {
+    this.capitalization = capitalization;
+  }
 }

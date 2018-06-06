@@ -8,13 +8,13 @@ security:
       scope: server
 
 spring:
-  data:
-    mongodb:
-      host: account-mongodb
-      username: user
-      password: ${MONGODB_PASSWORD}
-      database: piggymetrics
-      port: 27017
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://account-mysql:3306/accounts
+    username: user
+    password: ${MYSQL_PASSWORD}
 
 server:
   context-path: /accounts
