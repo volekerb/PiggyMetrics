@@ -18,11 +18,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
         <docker.image.prefix>test</docker.image.prefix>
-	</properties>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
