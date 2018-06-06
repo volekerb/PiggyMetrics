@@ -168,3 +168,15 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+
+  account-mysql:
+    image: accounts-mysql
+    restart: always
+    environment:
+      MYSQL_USER: accounts
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+      

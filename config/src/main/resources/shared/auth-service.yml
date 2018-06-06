@@ -3,8 +3,8 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    url: jdbc:mysql://auth-mysql:3306/users
-    username: user
+    url: jdbc:mysql://auth-mysql:3306/accounts
+    username: accounts
     password: ${MYSQL_PASSWORD}
 
 server:

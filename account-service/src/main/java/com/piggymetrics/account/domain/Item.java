@@ -7,11 +7,8 @@ import org.hibernate.validator.constraints.Length;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -19,7 +16,7 @@ public class Item {
   @Id
   @GeneratedValue
   @JsonIgnore
-  private String id;
+  private Integer id;
 
   @NotNull
   @Length(min = 1, max = 20)
@@ -37,11 +34,11 @@ public class Item {
   @NotNull
   private String icon;
 
-  public String getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 

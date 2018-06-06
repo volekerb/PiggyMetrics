@@ -13,7 +13,7 @@ spring:
       ddl-auto: create
   datasource:
     url: jdbc:mysql://account-mysql:3306/accounts
-    username: user
+    username: accounts
     password: ${MYSQL_PASSWORD}
 
 server:
