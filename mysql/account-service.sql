@@ -43,4 +43,28 @@ create table saving (
   constraint fk_saving_account foreign key(account_name) references account(name)
 );
 
+insert into account (name, last_seen, note) values ('demo', current_timestamp, 'demo note');
+
+insert into item(id, amount, currency, icon, period, title) values (1, 1300, 'USD', 'home', 'MONTH', 'Rent');
+insert into item(id, amount, currency, icon, period, title) values (2, 120, 'USD', 'utilities', 'MONTH', 'Utilities');
+insert into item(id, amount, currency, icon, period, title) values (3, 20, 'USD', 'meal', 'MONTH', 'Meal');
+insert into item(id, amount, currency, icon, period, title) values (4, 240, 'USD', 'gas', 'MONTH', 'Gas');
+insert into item(id, amount, currency, icon, period, title) values (5, 3500, 'EUR', 'island', 'YEAR', 'Vacation');
+insert into item(id, amount, currency, icon, period, title) values (6, 30, 'EUR', 'phone', 'MONTH', 'Phone');
+insert into item(id, amount, currency, icon, period, title) values (7, 700, 'USD', 'sport', 'YEAR', 'Gym');
+
+insert into account_expenses (account_name, expenses_id) values ('demo', 1);
+insert into account_expenses (account_name, expenses_id) values ('demo', 2);
+insert into account_expenses (account_name, expenses_id) values ('demo', 3);
+insert into account_expenses (account_name, expenses_id) values ('demo', 4);
+insert into account_expenses (account_name, expenses_id) values ('demo', 5);
+insert into account_expenses (account_name, expenses_id) values ('demo', 6);
+insert into account_expenses (account_name, expenses_id) values ('demo', 7);
+
+insert into item(id, amount, currency, icon, period, title) values (11, 42000, 'USD', 'wallet', 'YEAR', 'Salary');
+insert into item(id, amount, currency, icon, period, title) values (12, 500, 'USD', 'edu', 'MONTH', 'Scholarship');
+insert into account_incomes (account_name, expenses_id) values ('demo', 1);
+insert into account_incomes (account_name, expenses_id) values ('demo', 2);
+
+insert into saving(account_name, amount, capitalization, currency, deposit, interest) values ('demo', 5900, false, 'USD', true, 3.32);
 
