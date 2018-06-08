@@ -2,8 +2,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    url: jdbc:mysql://auth-mysql:3306/accounts
+    url: jdbc:mysql://account-mysql:3306/accounts
     username: accounts
     password: ${MYSQL_PASSWORD}
 
