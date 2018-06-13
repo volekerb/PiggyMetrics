@@ -63,8 +63,8 @@ insert into account_expenses (account_name, expenses_id) values ('demo', 7);
 
 insert into item(id, amount, currency, icon, period, title) values (11, 42000, 'USD', 'wallet', 'YEAR', 'Salary');
 insert into item(id, amount, currency, icon, period, title) values (12, 500, 'USD', 'edu', 'MONTH', 'Scholarship');
-insert into account_incomes (account_name, expenses_id) values ('demo', 1);
-insert into account_incomes (account_name, expenses_id) values ('demo', 2);
+insert into account_incomes (account_name, incomes_id) values ('demo', 1);
+insert into account_incomes (account_name, incomes_id) values ('demo', 2);
 
 insert into saving(account_name, amount, capitalization, currency, deposit, interest) values ('demo', 5900, false, 'USD', true, 3.32);
 
